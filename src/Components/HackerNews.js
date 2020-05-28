@@ -18,8 +18,10 @@ import LineChart from './LineChart';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-        backgroundColor: theme.palette.common.black,
+        backgroundColor: "#d35400",
         color: theme.palette.common.white,
+        padding:2,
+        fontSize:12,
     },
     body: {
         fontSize: 14,
@@ -95,8 +97,7 @@ class hackerNews extends Component {
             },
             tableRow: {
                 padding: 4
-            }
-
+            },
         });
         let chartData = {};
         chartData.labels = AllNews.map(items => items.objectID)
@@ -133,7 +134,7 @@ class hackerNews extends Component {
                                                 row.points
                                             }
                                         </StyledTableCell>
-                                        <StyledTableCell ><ArrowDropUpIcon onClick={() => this.UpVoteNews(id, row)} /></StyledTableCell>
+                                        <StyledTableCell ><ArrowDropUpIcon style={{cursor: "pointer"}} onClick={() => this.UpVoteNews(id, row)} /></StyledTableCell>
                                         <StyledTableCell >
                                             <NewsItems row={row} hideNews={this.hideNews}></NewsItems>
                                         </StyledTableCell>
@@ -145,7 +146,7 @@ class hackerNews extends Component {
                 {page !== 0 && <Button size="small" onClick={() => this.ChangePage("prev")}>
                     prev
           </Button>}
-                <Button size="small" onClick={() => this.ChangePage("next")} >
+                <Button size="small" onClick={() => this.ChangePage("next")} style={button} >
                     next
           </Button>
                 {chartData.labels.length && <LineChart chartData={chartData} />}

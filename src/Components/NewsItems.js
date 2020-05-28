@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {  makeStyles } from '@material-ui/core/styles';
+
 import moment from 'moment'
 
 class NewsItems extends Component {
@@ -15,18 +17,23 @@ class NewsItems extends Component {
 
     render() {
         const { row, hideNews } = this.props;
+        const an={
+            cursor: "pointer", 
+             textDecoration:"none",
+             color: 'inherit'
+        }
         return (
             <div>
-                <b>{row.title}</b>
+                <a style={an} href={row.url}><b>{row.title}</b></a>
                 {row.url &&
                     <span>
-                        (<a href={row.url} >{row.url.split("/")[2]}</a>)
+                        (<a style={an} href={row.url} >{row.url.split("/")[2]}</a>)
                             </span>
                 }
                 by <b>{row.author}</b>
                 <span>
                     {moment(row.created_at, "YYYYMMDD").fromNow()}
-                    <span onClick={() => hideNews(row)}> [hide] </span>
+                    <span onClick={() => hideNews(row)} style={{cursor: "pointer"}}> [hide] </span>
                 </span>
 
             </div>
