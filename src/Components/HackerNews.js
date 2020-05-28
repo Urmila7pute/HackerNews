@@ -146,7 +146,7 @@ class hackerNews extends Component {
                 {page !== 0 && <Button size="small" onClick={() => this.ChangePage("prev")}>
                     prev
           </Button>}
-                <Button size="small" onClick={() => this.ChangePage("next")} style={button} >
+                <Button size="small" onClick={() => this.ChangePage("next")} >
                     next
           </Button>
                 {chartData.labels.length && <LineChart chartData={chartData} />}
