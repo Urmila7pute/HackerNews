@@ -5,7 +5,9 @@ import HackerNews from './Components/HackerNews';
 function App() {
   return (
     <div className="App">
-      <h1>Hacker News</h1>
+      <h1>
+      <text style={{color: '#d35400'}}>Hacker News</text>
+        </h1>
       <HackerNews />
     </div>
   );

@@ -10,9 +10,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
-import moment from 'moment'
 import Button from '@material-ui/core/Button';
-import Chart from 'chart.js';
 import LineChart from './LineChart';
 
 
@@ -144,10 +142,11 @@ class hackerNews extends Component {
                     </Table>
                 </TableContainer >
                 {page !== 0 && <Button size="small" onClick={() => this.ChangePage("prev")}>
-                    prev
+                <text style={{color: '#d35400'}}>Previous</text>
           </Button>}
                 <Button size="small" onClick={() => this.ChangePage("next")} >
-                    next
+                <text style={{color: '#d35400'}}>next</text>
+                    
           </Button>
                 {chartData.labels.length && <LineChart chartData={chartData} />}
             </>

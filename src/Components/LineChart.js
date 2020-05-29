@@ -23,8 +23,8 @@ class LineChart extends Component {
 
     drawChart() {
         const { chartData } = this.props;
-        var ctx = document.getElementById('myChart');
-        var myChart = new Chart(ctx, {
+        let ctx = document.getElementById('myChart');
+        let myChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: chartData.labels,
@@ -69,7 +69,6 @@ class LineChart extends Component {
     }
 
     render() {
-        const { chartData } = this.props;
         const classes = makeStyles({
             canvas: {
                 width: 900,
